@@ -1,0 +1,15 @@
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `confirm_password` varchar(255) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `dob` date NOT NULL,
+  `address` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `current_thought` text DEFAULT NULL,
+  `thought_timestamp` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
+  `role` enum('admin','user') NOT NULL DEFAULT 'user',
+  `profile_pic` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
